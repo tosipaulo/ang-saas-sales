@@ -7,6 +7,14 @@
   display: flex;
   overflow: hidden;
 
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+
   &__bg {
     display: none;
     background: rgb(2, 0, 36);
@@ -19,11 +27,12 @@
 
     @media (min-width: 768px) {
       display: block;
-      width: 50%;
+      height: 40vh;
     }
 
     @media (min-width: 1024px) {
       width: 60%;
+      height: 100vh;
     }
 
     &__figure {
@@ -43,8 +52,10 @@
 
   &__form {
     padding: $spacing-30;
+    width: 100%;
 
     @media (min-width: 768px) {
+      margin: auto;
       width: 50%;
     }
 
@@ -57,21 +68,37 @@
       font-weight: 600;
       color: $color-primary;
       margin-bottom: $spacing-40;
+      letter-spacing: -1px;
 
       @media (min-width: 1024px) {
         font-size: 32px;
       }
     }
 
-    &__sign {
+    &__subtitle {
       font-size: 20px;
       font-style: italic;
-      color: $color-gray;
+      color: $color-gray-primary;
+      margin-bottom: $spacing-35;
 
       &__link {
         font-size: 20px;
         font-style: italic;
-        color: $color-gray;
+        color: $color-gray-primary;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    &__sign {
+      margin-bottom: $spacing-40;
+
+      &__forget {
+        display: block;
+        text-align: right;
+        color: $color-gray-primary;
+        font-size: 14px;
+        font-style: italic;
         text-decoration: underline;
         cursor: pointer;
       }
