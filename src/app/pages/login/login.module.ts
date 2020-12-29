@@ -5,10 +5,11 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
 import { LoginRoutingModule } from "./login-routing.module";
 
 import { InputModule } from "../../components/input/input.module";
+import { ButtonModule } from "../../components/button/button.module";
 
 @NgModule({
   declarations: [LoginComponent, SignUpComponent],
-  imports: [CommonModule, LoginRoutingModule, InputModule],
+  imports: [CommonModule, LoginRoutingModule, InputModule, ButtonModule],
   exports: [LoginComponent, SignUpComponent],
 })
 export class LoginModule {}
