@@ -15,4 +15,8 @@ export class SignService {
   register(user: UserModel) {
     return this.http.post(`${environment.api}/auth/register`, user);
   }
+
+  confirm(token) {
+    return this.http.get(`${environment.api}/auth/confirm/${token}`);
+  }
 }

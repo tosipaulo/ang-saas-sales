@@ -17,10 +17,11 @@ import { RouterModule } from "@angular/router";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SignService } from './sign.service';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 
 @NgModule({
-  declarations: [SignComponent, LoginComponent, RegisterComponent],
+  declarations: [SignComponent, LoginComponent, RegisterComponent, ConfirmComponent],
   imports: [
     CommonModule,
     SignRoutingModule,
