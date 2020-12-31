@@ -6,6 +6,11 @@ import { SignComponent } from "./sign.component";
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
     path: "",
     component: SignComponent,
     children: [

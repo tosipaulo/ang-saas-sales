@@ -11,16 +11,6 @@ const routes: Routes = [
     path: 'acesso',
     loadChildren: () =>
     import("./pages/sign/sign.module").then((m) => m.SignModule),
-  },
-  {
-    path: '',
-    children: [
-      {
-        path: "login",
-        loadChildren: () =>
-          import("./pages/login/login.module").then((m) => m.LoginModule),
-      }
-    ]
   }
 ];
 
