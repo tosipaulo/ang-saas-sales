@@ -27,7 +27,7 @@
   </a>
 
   <div class="login__form__sign__control">
-    <lib-button [large]='true' type="submit" [disabled]='!registerForm.valid'>Cadastrar</lib-button>
+    <button lib-button [large]='true' type="submit" [disabled]='!registerForm.valid' [load]="load">Cadastrar</button>
   </div>
 
 </form>

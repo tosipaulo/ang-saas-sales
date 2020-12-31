@@ -18,7 +18,7 @@
   </a>
 
   <div class="login__form__sign__control">
-    <lib-button [large]='true' type="submit" [disabled]='!loginForm.valid'>Login</lib-button>
+    <button lib-button [large]='true' type="submit" [disabled]='!loginForm.valid' [load]="load">Login</button>
   </div>
 
 </form>

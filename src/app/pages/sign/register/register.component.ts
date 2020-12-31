@@ -13,6 +13,7 @@ import { SignService } from '../sign.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  load: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -28,16 +29,18 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm.value)
     if(this.registerForm.valid) {
+      this.load = true;
       this.signService.register(this.registerForm.value).subscribe(
         (res) => {
           this.snackBar.open(`${res['message']}`, '🥰', {
             duration: 6000,
           });
+          this.load = false;
           this.registerForm.reset();
         },
         (error: HttpErrorResponse) => {
+          this.load = false;
           this.snackBar.open(`Ops! Aconteceu algum problema`, '❌', {
             duration: 3000,
           });

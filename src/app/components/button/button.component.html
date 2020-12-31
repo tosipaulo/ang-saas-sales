@@ -1,3 +1,7 @@
-<button class="button" [ngClass]="{'large': large}" [type]="type" [disabled]="disabled">
+<!-- <button class="button" [ngClass]="{'large': large}" [type]="type" [disabled]="disabled">
   <ng-content></ng-content>
-</button>
+</button> -->
+<span [class.lib-button__hide]="load"><ng-content></ng-content></span>
+<div [class.lib-button__hide]="!load" *ngIf="load" class="lib-button__box-load">
+  <span class="lib-button__load"></span>
+</div>

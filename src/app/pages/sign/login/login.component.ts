@@ -15,6 +15,7 @@ import { SignService } from '../sign.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  load: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -32,12 +33,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if(this.loginForm.valid) {
+      this.load = true;
       this.signService.login(this.loginForm.value).subscribe(
         (user) => {
           this.router.navigate(['clientes']);
         },
         (error: HttpErrorResponse) => {
-          console.log(error)
+          this.load = false;
           this.snackBar.open(`${error['error']['message']}`, '❌', {
             duration: 3000,
           });

@@ -1,6 +1,27 @@
 @import "../../../scss/color.scss";
 
-.button {
+@mixin load($color) {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba($color, 0.3);
+  border-top-color: $color;
+  border-left-color: $color;
+  border-right-color: $color;
+  animation: 1.5s spin infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.lib-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   outline: none;
   height: 42px;
@@ -15,16 +36,34 @@
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.26);
   transition: box-shadow 0.2s ease-in;
 
-  &.large {
+  &__box-load {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__hide {
+    opacity: 0;
+  }
+
+  &__load {
+    @include load(#fff);
+  }
+
+  &__large {
     width: 100%;
   }
 
-  &:active,
-  &:focus {
+  &:active {
     box-shadow: none;
   }
 
-  &:disabled {
+  &__disabled {
     opacity: 0.4;
   }
 }
