@@ -1,5 +1,9 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { SignService } from '../sign.service';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +14,10 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private signService: SignService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -22,6 +29,21 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerForm.value)
+    if(this.registerForm.valid) {
+      this.signService.register(this.registerForm.value).subscribe(
+        (res) => {
+          this.snackBar.open(`${res['message']}`, '🥰', {
+            duration: 6000,
+          });
+          this.registerForm.reset();
+        },
+        (error: HttpErrorResponse) => {
+          this.snackBar.open(`Ops! Aconteceu algum problema`, '❌', {
+            duration: 3000,
+          });
+        }
+      )
+    }
   }
 
 }

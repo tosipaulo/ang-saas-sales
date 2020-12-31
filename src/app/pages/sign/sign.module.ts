@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
 import { SignComponent } from './sign.component';
 import { SignRoutingModule } from './sign-routing.module';
 
@@ -9,9 +11,12 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { RouterModule } from "@angular/router";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SignService } from './sign.service';
 
 
 @NgModule({
@@ -24,8 +29,13 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
-  exports: [SignComponent]
+  exports: [SignComponent],
+  providers: [
+    SignService
+  ]
 })
 export class SignModule { }
