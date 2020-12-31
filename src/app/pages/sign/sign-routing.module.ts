@@ -24,6 +24,10 @@ const routes: Routes = [
         component: RegisterComponent
       },
       {
+        path: 'confirmar',
+        redirectTo: 'login'
+      },
+      {
         path: 'confirmar/:token',
         component: ConfirmComponent
       }

@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'acesso',
     loadChildren: () =>
     import("./pages/sign/sign.module").then((m) => m.SignModule),
+  },
+  {
+    path: 'clientes',
+    loadChildren: () =>
+    import("./pages/clients/clients.module").then((m) => m.ClientsModule),
   }
 ];
 
