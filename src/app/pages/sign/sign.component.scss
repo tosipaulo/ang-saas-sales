@@ -94,6 +94,10 @@
     &__sign {
       margin-bottom: $spacing-40;
 
+      ::ng-deep &__input {
+        margin-bottom: $spacing-10;
+      }
+
       ::ng-deep &__forget {
         display: block;
         text-align: right;

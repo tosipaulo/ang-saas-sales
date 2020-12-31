@@ -3,11 +3,11 @@
     <mat-label>{{title}}</mat-label>
     <input matInput [formControlName]="formInputName" [type]="type">
     <mat-error *ngIf="formName.get(formInputName).errors && formName.get(formInputName).errors['email']">
-      error
+      Esse e-mail não é válido.
     </mat-error>
 
-    <mat-error *ngIf="formName.get(formInputName).errors['required']">
-      error 2
+    <mat-error *ngIf="formName.get(formInputName).errors && formName.get(formInputName).errors['required']">
+      Ops! Faltou preencher esse campo.
     </mat-error>
   </mat-form-field>
 </ng-container>
