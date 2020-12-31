@@ -1,7 +1,7 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { LoginComponent } from "./login.component";
-import { LoginRoutingModule } from "./login-routing.module";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SignComponent } from './sign.component';
+import { SignRoutingModule } from './sign-routing.module';
 
 import { InputModule } from "../../components/input/input.module";
 import { ButtonModule } from "../../components/button/button.module";
@@ -10,12 +10,15 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from "@angular/router";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [SignComponent, LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
-    LoginRoutingModule,
+    SignRoutingModule,
     InputModule,
     ButtonModule,
     ReactiveFormsModule,
@@ -23,6 +26,6 @@ import { RouterModule } from "@angular/router";
     MatFormFieldModule,
     RouterModule
   ],
-  exports: [LoginComponent],
+  exports: [SignComponent]
 })
-export class LoginModule {}
+export class SignModule { }

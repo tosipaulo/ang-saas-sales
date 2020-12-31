@@ -1,0 +1,33 @@
+<form class="login__form__sign" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <div class="login__form__sign__input">
+    <lib-input
+      title="Digite seu nome e sobrenome"
+      type="name"
+      formInputName="name"
+      [formName]="registerForm"
+      ></lib-input>
+  </div>
+
+  <div class="login__form__sign__input">
+    <lib-input
+      title="Digite seu e-mail"
+      type="email"
+      formInputName="email"
+      [formName]="registerForm"
+      ></lib-input>
+  </div>
+
+  <div class="login__form__sign__input">
+    <lib-input title="Digite sua senha" type="password" formInputName="password" [formName]="registerForm"></lib-input>
+  </div>
+
+  <a class="login__form__sign__forget">
+    Esqueci minha senha
+  </a>
+
+  <div class="login__form__sign__control">
+    <lib-button [large]='true' type="submit" [disabled]='!registerForm.valid'>Cadastrar</lib-button>
+  </div>
+
+</form>

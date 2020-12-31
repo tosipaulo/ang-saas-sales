@@ -1,11 +1,20 @@
-<mat-form-field appearance="outline">
-  <mat-label>{{title}}</mat-label>
-  <input matInput>
-</mat-form-field>
+<ng-container [formGroup]="formName">
+  <mat-form-field appearance="outline" >
+    <mat-label>{{title}}</mat-label>
+    <input matInput [formControlName]="formInputName" [type]="type">
+    <mat-error *ngIf="formName.get(formInputName).errors && formName.get(formInputName).errors['email']">
+      error
+    </mat-error>
+
+    <mat-error *ngIf="formName.get(formInputName).errors['required']">
+      error 2
+    </mat-error>
+  </mat-form-field>
+</ng-container>
 <!-- <div class="form-field">
   <div class="form-field__control">
     <input id="exampleField" type="text" class="form-field__input" value="" placeholder=" " />
     <label for="exampleField" class="form-field__label">Example field</label>
     <div class="form-field__bar"></div>
-  </div>
+  </div>*ngIf="formName.hasError('required')"
 </div> -->
