@@ -21,11 +21,11 @@ export class ConfirmComponent implements OnInit {
     const token = this.route.snapshot.paramMap.get("token");
     this.signService.confirm(token).subscribe(
       (res) => {
-        this.message = res['message'];
+        this.message = `🥰 ${res['message']}`;
       },
       (error: HttpErrorResponse) => {
         console.log(error['error']['message'])
-        this.message = error['error']['message'];
+        this.message = `❌ ${error['error']['message']}`;
       }
     )
   }
