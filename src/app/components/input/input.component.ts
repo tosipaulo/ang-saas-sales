@@ -19,6 +19,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() formName: FormGroup;
   @Input() formInputName: string;
   @Input() type: string = 'text';
+  @Input() readonly: boolean = false;
 
   onChanged: any = () => {}
   onTouched: any = () => {}

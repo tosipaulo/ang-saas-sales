@@ -23,4 +23,13 @@ export class SignService {
   login(user: UserModel) {
     return this.http.post(`${environment.api}/auth/authenticate`, user);
   }
+
+  reset(user: UserModel) {
+    const { email } = user;
+    return this.http.post(`${environment.api}/auth/forgot_password`, {email} );
+  }
+
+  newPassword(body) {
+    return this.http.post(`${environment.api}/auth/reset_password`, body );
+  }
 }

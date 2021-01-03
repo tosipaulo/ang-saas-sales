@@ -42,6 +42,9 @@ export class LoginComponent implements OnInit {
           this.load = false;
           this.snackBar.open(`${error['error']['message']}`, '❌', {
             duration: 3000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+            panelClass: 'lib-snackbar'
           });
         }
       )

@@ -18,10 +18,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SignService } from './sign.service';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { ResetComponent } from './reset/reset.component';
 
 
 @NgModule({
-  declarations: [SignComponent, LoginComponent, RegisterComponent, ConfirmComponent],
+  declarations: [SignComponent, LoginComponent, RegisterComponent, ConfirmComponent, ResetComponent],
   imports: [
     CommonModule,
     SignRoutingModule,

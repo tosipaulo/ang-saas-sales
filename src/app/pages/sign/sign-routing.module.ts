@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { ConfirmComponent } from "./confirm/confirm.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
+import { ResetComponent } from "./reset/reset.component";
 import { SignComponent } from "./sign.component";
 
 const routes: Routes = [
@@ -30,6 +31,10 @@ const routes: Routes = [
       {
         path: 'confirmar/:token',
         component: ConfirmComponent
+      },
+      {
+        path: 'resetar',
+        component: ResetComponent
       }
     ]
   }

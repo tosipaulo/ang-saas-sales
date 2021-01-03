@@ -1,0 +1,53 @@
+<form class="login__form__sign" [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+
+  <p class="login__form__sign__title">Falta pouco para resetar sua senha.
+    Preencha <ng-container *ngIf="!resetPassword; else 'password'">seu e-mail</ng-container> abaixo.</p>
+
+    <ng-template #password>
+      sua senha
+    </ng-template>
+
+  <div class="login__form__sign__input">
+    <lib-input
+      title="Digite seu e-mail"
+      type="email"
+      formInputName="email"
+      [formName]="resetForm"
+      [readonly]="resetPassword"
+      ></lib-input>
+  </div>
+
+  <div class="login__form__sign__input" *ngIf="resetPassword">
+    <lib-input
+      title="Digite nova senha"
+      type="password"
+      formInputName="password"
+      [formName]="resetForm"
+      ></lib-input>
+  </div>
+
+  <div class="login__form__sign__link" *ngIf="!resetPassword">
+    <a class="login__form__sign__forget mt40" [routerLink]="['/acesso/login']">
+      Fazer login
+    </a>
+  </div>
+
+  <div class="login__form__sign__control">
+    <button
+      lib-button [large]='true'
+      type="submit"
+      [disabled]='!resetForm.valid'
+      [load]="load"
+      *ngIf="!resetPassword"
+      >Resetar senha</button>
+    <button
+      lib-button
+      [large]='true'
+      type="submit"
+      [disabled]='!resetForm.valid'
+      [load]="load"
+      *ngIf="resetPassword"
+      >Cadastrar nova senha</button>
+  </div>
+
+</form>
