@@ -35,6 +35,9 @@ export class RegisterComponent implements OnInit {
         (res) => {
           this.snackBar.open(`${res['message']}`, '🥰', {
             duration: 6000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+            panelClass: 'lib-snackbar'
           });
           this.load = false;
           this.registerForm.reset();
@@ -43,6 +46,9 @@ export class RegisterComponent implements OnInit {
           this.load = false;
           this.snackBar.open(`Ops! Aconteceu algum problema`, '❌', {
             duration: 3000,
+            panelClass: 'lib-snackbar',
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
           });
         }
       )

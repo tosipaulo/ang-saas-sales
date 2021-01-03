@@ -13,9 +13,14 @@
     <lib-input title="Digite sua senha" type="password" formInputName="password" [formName]="loginForm"></lib-input>
   </div>
 
-  <a class="login__form__sign__forget">
-    Esqueci minha senha
-  </a>
+  <div class="login__form__sign__link">
+    <a class="login__form__sign__forget">
+      Esqueci minha senha
+    </a>
+    <a class="login__form__sign__forget mt40" [routerLink]="['/acesso/cadastro']">
+      Cadastra-se
+    </a>
+  </div>
 
   <div class="login__form__sign__control">
     <button lib-button [large]='true' type="submit" [disabled]='!loginForm.valid' [load]="load">Login</button>

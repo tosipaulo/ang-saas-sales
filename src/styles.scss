@@ -142,7 +142,6 @@ table {
   width: 100%;
   padding: 0 15px;
   margin: auto;
-  border: 1px solid red;
 
   @media (min-width: 1024px) {
     width: 900px;
@@ -156,4 +155,8 @@ table {
 html,
 body {
   height: 100%;
+}
+
+.lib-snackbar {
+  background-color: #bb73e0;
 }

@@ -1,5 +1,7 @@
 <form class="login__form__sign" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
+  <p class="login__form__sign__title">Falta pouco para organizar suas vendas. Preencha os campos abaixo.</p>
+
   <div class="login__form__sign__input">
     <lib-input
       title="Digite seu nome e sobrenome"
@@ -22,9 +24,12 @@
     <lib-input title="Digite sua senha" type="password" formInputName="password" [formName]="registerForm"></lib-input>
   </div>
 
-  <a class="login__form__sign__forget">
-    Esqueci minha senha
-  </a>
+  <div class="login__form__sign__link">
+    <a class="login__form__sign__forget mt40" [routerLink]="['/acesso/login']">
+      Fazer login
+    </a>
+  </div>
+
 
   <div class="login__form__sign__control">
     <button lib-button [large]='true' type="submit" [disabled]='!registerForm.valid' [load]="load">Cadastrar</button>

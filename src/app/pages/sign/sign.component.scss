@@ -78,9 +78,12 @@
 
     &__subtitle {
       font-size: 20px;
-      font-style: italic;
       color: $color-gray-primary;
       margin-bottom: $spacing-35;
+
+      strong {
+        font-weight: bold;
+      }
 
       &__link {
         font-size: 20px;
@@ -94,19 +97,35 @@
     &__sign {
       margin-bottom: $spacing-40;
 
+      ::ng-deep &__title {
+        color: $color-gray-primary;
+      }
+
       ::ng-deep &__input {
         margin-bottom: $spacing-10;
       }
 
+      ::ng-deep &__link {
+        display: flex;
+        flex-direction: column;
+      }
+
       ::ng-deep &__forget {
-        display: block;
+        display: inline-block;
         text-align: right;
         color: $color-gray-primary;
         font-size: 14px;
-        font-style: italic;
         text-decoration: underline;
         cursor: pointer;
-        margin-bottom: $spacing-40;
+        margin-bottom: $spacing-10;
+
+        &.mt40 {
+          margin-bottom: $spacing-40;
+        }
+
+        &:hover {
+          color: $color-primary;
+        }
       }
     }
   }
