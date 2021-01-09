@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { SignService } from './sign.service';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { ResetComponent } from './reset/reset.component';
+import { SignInterceptor } from './sign.interceptor';
 
 
 @NgModule({
@@ -40,4 +41,13 @@ import { ResetComponent } from './reset/reset.component';
     SignService
   ]
 })
-export class SignModule { }
+export class SignModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SignModule,
+      providers: [
+        SignInterceptor
+      ]
+    }
+  }
+}

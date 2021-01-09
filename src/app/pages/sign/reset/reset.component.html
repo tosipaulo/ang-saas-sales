@@ -1,11 +1,6 @@
 <form class="login__form__sign" [formGroup]="resetForm" (ngSubmit)="onSubmit()">
 
-  <p class="login__form__sign__title">Falta pouco para resetar sua senha.
-    Preencha <ng-container *ngIf="!resetPassword; else 'password'">seu e-mail</ng-container> abaixo.</p>
-
-    <ng-template #password>
-      sua senha
-    </ng-template>
+  <p class="login__form__sign__title">Falta pouco para resetar sua senha. Preencha abaixo.</p>
 
   <div class="login__form__sign__input">
     <lib-input
